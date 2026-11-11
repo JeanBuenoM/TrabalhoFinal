@@ -2,7 +2,7 @@
 
 Cadastro de alunos e disciplinas, matrícula em ofertas de disciplina e aprovação/reprovação.
 
-**Integrantes:** Kauã Morais e João Vitor Passos
+**Integrantes:** Kauã Morais, João Vitor Passos, Jean Carlos Bueno, Mateus Cantelle Gomes 
 
 **Tecnologias:** Java 26, Spring Boot 4.1.2, Spring Data JPA, MySQL 8, ReactJS 19 + Vite.
 
