@@ -25,9 +25,9 @@ O banco, as tabelas (`database/schema.sql`) e os dados iniciais (`database/dados
 
 ## 2. Backend
 
-1. Abra a pasta `Trabalho 5` no IntelliJ.
+1. Abra a pasta `Sistema Academico 1.0` no IntelliJ.
 2. Em **Run → Edit Configurations → SistemaAcademicoApplication**:
-   - **Working directory:** pasta `Trabalho 5`
+   - **Working directory:** pasta `Sistema Academico 1.0`
    - **Environment variables:** `DB_USER=sistema_academico;DB_PASSWORD=sua_senha`
 3. Rode `SistemaAcademicoApplication`. A API sobe em `http://localhost:8080`.
 
