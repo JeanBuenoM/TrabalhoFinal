@@ -1,9 +1,61 @@
-# unicesumar-poo
-Repositório utilizado na disciplina de Programação Orientada a Objetos dos cursos de Engenharia de Software e Análise e Desenvolvimento de Sistemas da Unicesumar Ponta Grossa
+# Sistema Acadêmico — Atividade Final 2BIM
 
-## Manifesto Oficial
+Cadastro de alunos e disciplinas, matrícula em ofertas de disciplina e aprovação/reprovação.
 
-### Lista de alunos que concordam que o Professor Goku é o melhor professor do universo (adicione seu nome e turma (ESOFT4S-NA, ESOFT4S-NB, ADSIS4S) em ordem alfabética:):
+**Integrantes:** Kauã Morais, João Vitor Passos, Jean Carlos Bueno, Mateus Cantelle Gomes 
 
-1. Aluno Exemplo (ESOFT3S-NA)
-2. Kauã Morais (ADS4S)
+**Tecnologias:** Java 26, Spring Boot 4.1.2, Spring Data JPA, MySQL 8, ReactJS 19 + Vite.
+
+## Pré-requisitos
+
+- JDK 26
+- MySQL 8 (e MySQL Workbench)
+- Node.js LTS
+
+## 1. Banco de dados
+
+No MySQL Workbench, como `root`, rode (troque `sua_senha`):
+
+```sql
+CREATE USER IF NOT EXISTS 'sistema_academico'@'localhost' IDENTIFIED BY 'sua_senha';
+GRANT ALL PRIVILEGES ON sistema_academico.* TO 'sistema_academico'@'localhost';
+```
+
+O banco, as tabelas (`database/schema.sql`) e os dados iniciais (`database/dados-iniciais.sql`) são criados automaticamente ao iniciar o backend.
+
+## 2. Backend
+
+1. Abra a pasta `Trabalho 5` no IntelliJ.
+2. Em **Run → Edit Configurations → SistemaAcademicoApplication**:
+   - **Working directory:** pasta `Trabalho 5`
+   - **Environment variables:** `DB_USER=sistema_academico;DB_PASSWORD=sua_senha`
+3. Rode `SistemaAcademicoApplication`. A API sobe em `http://localhost:8080`.
+
+Testes: `mvn test`
+
+## 3. Frontend
+
+Com o backend rodando:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Acesse `http://localhost:5173`.
+
+## Endpoints
+
+| Método | URL |
+|---|---|
+| GET / POST | `/api/alunos` |
+| GET | `/api/alunos/{ra}` |
+| GET / POST | `/api/disciplinas` |
+| GET | `/api/disciplinas/{codigo}` |
+| GET | `/api/ofertas` |
+| GET / POST | `/api/matriculas` |
+| GET | `/api/matriculas/{id}` |
+| PATCH | `/api/matriculas/{id}/conclusao` |
+
+Erros retornam `{ "mensagem": "..." }` com status 400, 404 ou 409.
